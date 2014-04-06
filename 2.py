@@ -16,11 +16,12 @@ class MyFrame(wx.Frame):
 										pos,size,style,name)
 		self.panel=wx.Panel(self)
 
-		self.panel.SetBackgroundColour(wx.BLUE)
+		self.panel.SetBackgroundColour(wx.GREEN)
 		
 		self.button=wx.Button(self.panel,
 								label="Push Me",
 								pos=(50,50))
+		self.button.SetForegroundColour(wx.BLACK)
 
 if __name__=="__main__":
 	app=MyApp(False)
