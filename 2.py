@@ -17,7 +17,7 @@ class MyFrame(wx.Frame):
 		self.panel=wx.Panel(self)
 
 		self.panel.SetBackgroundColour(wx.BLUE)
-
+		
 		self.button=wx.Button(self.panel,
 								label="Push Me",
 								pos=(50,50))
