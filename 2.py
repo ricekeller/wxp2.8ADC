@@ -18,10 +18,34 @@ class MyFrame(wx.Frame):
 
 		self.panel.SetBackgroundColour(wx.GREEN)
 		
-		self.button=wx.Button(self.panel,
+		button=wx.Button(self.panel,
 								label="Push Me",
 								pos=(50,50))
-		self.button.SetForegroundColour(wx.BLACK)
+		self.btnId=button.GetId()
+		self.Bind(wx.EVT_BUTTON, self.OnButton, button)
+	
+	def OnButton(self,event):
+		"""called when the button is clicked"""
+		print "\nFrame GetChildren:"
+		for child in self.GetChildren():
+			print "%s" % repr(child)
+		
+		print "\nPanel FindWindowById:"
+		button=self.panel.FindWindowById(self.btnId)
+		print "%s" % repr(button)
+		button.SetLabel("Changed Label")
+		
+		print "\nButton GetParent:"
+		panel=button.GetParent()
+		print "%s" % repr(panel)
+		
+		print "\nGet the application object:"
+		app=wx.GetApp()
+		print "%s" % repr(app)
+		
+		print "\nGet the Frame from the App:"
+		frame=app.GetTopWindow()
+		print "%s" % repr(frame)
 
 if __name__=="__main__":
 	app=MyApp(False)
