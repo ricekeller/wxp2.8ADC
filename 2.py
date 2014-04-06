@@ -23,6 +23,7 @@ class MyFrame(wx.Frame):
 								pos=(50,50))
 		self.btnId=button.GetId()
 		self.Bind(wx.EVT_BUTTON, self.OnButton, button)
+		
 	
 	def OnButton(self,event):
 		"""called when the button is clicked"""
